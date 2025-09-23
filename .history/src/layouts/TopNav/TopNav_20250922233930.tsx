@@ -2,7 +2,7 @@ import React, {useState} from  "react";
 import { HomeOutlined, FileSearchOutlined, CarryOutOutlined ,UserOutlined} from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
-import './index.less';
+
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -11,29 +11,52 @@ const items: MenuItem[] = [
     {
       label: '首页',
       key: 'home',
-      icon: <HomeOutlined />
+      icon: <HomeOutlined />,
     },
     {
       label: '计划',
       key: 'plan',
-      icon: <FileSearchOutlined />
+      icon: <FileSearchOutlined />,
+      children:[
+        {
+          type: 'group',
+          label: 'Item 1',
+          children: [
+            { label: 'Option 1', key: 'setting:1' }
+          
+          ],
+        },
+      ]
     },
     {
       label: '任务',
       key: 'task',
-      icon: <CarryOutOutlined />
+      icon: <CarryOutOutlined />,
+      children: [
+        {
+          type: 'group',
+          label: 'Item 1',
+          children: [
+            { label: 'Option 1', key: 'setting:1' }
+          
+          ],
+        },
+        {
+          type: 'group',
+          label: 'Item 2',
+          children: [
+            { label: 'Option 3', key: 'setting:3' },
+    
+          ],
+        },
+      ],
     },
     {
       label: '个人中心',
       key: 'center',
-      icon: <UserOutlined />,
-      style: { 
-        marginLeft: 'auto'
-      }
+      icon: <UserOutlined />
     }
   ];
-  
-
 export const TopNav = () => {
     const [current, setCurrent] = useState('mail');
     
@@ -43,14 +66,7 @@ export const TopNav = () => {
       };
       
     return (
-    
-        <Menu 
-        onClick={onClick} 
-        selectedKeys={[current]}
-        mode="horizontal"
-        items={items}
-          />
-      
+        <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
     )
 }
 

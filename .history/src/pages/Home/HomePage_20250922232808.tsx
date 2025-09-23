@@ -1,10 +1,8 @@
 
-import CalendarComponent from '../Calendar/CalendarPage';
-import WishCard from '../Calendar/WishCard';
-import './HomePage.less';
-import TopNav from '../../layouts/TopNav/TopNav';
-import Bottom from '../../layouts/bottomNav/bottom';
-import CarouselPage from '../../layouts/Carousel/CarouselPage';
+import CalendarComponent from '../Calendar/CalendarPage'
+import WishCard from '../Calendar/WishCard'
+import './HomePage.less'
+import TopNav from '../../layouts/TopNav/TopNav'
 export const Home = () => {
   return (
     <>
@@ -22,7 +20,7 @@ export const Home = () => {
     <div className="middle-container">
 
     <div className="middle-on-container">
-      <CarouselPage/>
+      <a href="/plan">创建计划</a>
     </div>
     <div className="middle-under-container">
       <CalendarComponent/>
@@ -36,7 +34,7 @@ export const Home = () => {
     </div>
 
     <div className="footer-container">
-      <Bottom/>
+    底部
     </div>
 
     </div>

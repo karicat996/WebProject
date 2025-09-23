@@ -2,7 +2,7 @@ import React, {useState} from  "react";
 import { HomeOutlined, FileSearchOutlined, CarryOutOutlined ,UserOutlined} from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
-import './index.less';
+import './index.less'
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -26,14 +26,9 @@ const items: MenuItem[] = [
     {
       label: '个人中心',
       key: 'center',
-      icon: <UserOutlined />,
-      style: { 
-        marginLeft: 'auto'
-      }
+      icon: <UserOutlined />
     }
   ];
-  
-
 export const TopNav = () => {
     const [current, setCurrent] = useState('mail');
     
@@ -43,14 +38,11 @@ export const TopNav = () => {
       };
       
     return (
-    
         <Menu 
         onClick={onClick} 
         selectedKeys={[current]}
-        mode="horizontal"
-        items={items}
-          />
-      
+         mode="horizontal"
+          items={items} />
     )
 }
 

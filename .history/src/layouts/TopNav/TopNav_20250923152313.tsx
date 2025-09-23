@@ -23,17 +23,15 @@ const items: MenuItem[] = [
       key: 'task',
       icon: <CarryOutOutlined />
     },
-    {
-      label: '个人中心',
-      key: 'center',
-      icon: <UserOutlined />,
-      style: { 
-        marginLeft: 'auto'
-      }
-    }
   ];
-  
-
+const rightItems: MenuItem[] = [
+  {
+    label: '个人中心',
+    key: 'center',
+    icon: <UserOutlined />,
+    className: 'personal-center-menu-item'
+  }
+  ];
 export const TopNav = () => {
     const [current, setCurrent] = useState('mail');
     
@@ -43,14 +41,13 @@ export const TopNav = () => {
       };
       
     return (
-    
         <Menu 
         onClick={onClick} 
         selectedKeys={[current]}
         mode="horizontal"
         items={items}
+        extra={ <Menu mode="horizontal" items={rightItems} />}
           />
-      
     )
 }
 

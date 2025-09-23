@@ -1,5 +1,5 @@
 import React, {useState} from  "react";
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, FileSearchOutlined, SettingOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
 
@@ -9,19 +9,19 @@ type MenuItem = Required<MenuProps>['items'][number];
 
 const items: MenuItem[] = [
     {
-      label: 'Navigation One',
-      key: 'mail',
-      icon: <MailOutlined />,
+      label: '首页',
+      key: 'home',
+      icon: <FileSearchOutlined />,
     },
     {
-      label: 'Navigation Two',
-      key: 'app',
+      label: '计划',
+      key: 'plan',
       icon: <AppstoreOutlined />,
       disabled: true,
     },
     {
-      label: 'Navigation Three - Submenu',
-      key: 'SubMenu',
+      label: '任务',
+      key: 'task',
       icon: <SettingOutlined />,
       children: [
         {
